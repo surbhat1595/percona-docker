@@ -85,6 +85,7 @@ RUN set -ex; \
         libpq \
         percona-postgresql${PG_MAJOR//.}; \
     microdnf -y clean all; \
+    microdnf -y update; \
     rm -rf /var/cache/dnf /var/cache/yum
 
 COPY --from=downloader /downloaded-packages.tar.gz .
