@@ -115,6 +115,7 @@ RUN set -ex; \
     rm -rf "$GNUPGHOME" /tmp/epel-release.rpm /tmp/oraclelinux-release.rpm;
 
 RUN set -ex; \
+    percona-release enable ppg-${PPG_REPO_VERSION} release; \
     microdnf install -y --enablerepo="ol9_developer_EPEL"\
         python3-click \
         percona-patroni; \

@@ -157,6 +157,7 @@ RUN set -ex; \
 # python3-click was pre-installed in the runtime-deps RUN above.
 RUN set -ex; \
     microdnf -y update; \
+    percona-release enable ppg-${PPG_REPO_VERSION} release; \
     microdnf install -y \
         percona-patroni; \
     microdnf clean all

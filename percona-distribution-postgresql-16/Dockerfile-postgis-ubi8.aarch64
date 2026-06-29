@@ -153,6 +153,7 @@ RUN set -ex; \
 # percona-patroni install also runs with NO --enablerepo for the same reason;
 # python3-click was pre-installed in the runtime-deps RUN above.
 RUN set -ex; \
+    percona-release enable ppg-${PPG_REPO_VERSION} release; \
     microdnf -y update; \
     microdnf install -y \
         percona-patroni; \
