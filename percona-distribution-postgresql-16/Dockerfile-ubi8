@@ -120,6 +120,11 @@ RUN set -ex; \
 
 RUN set -ex; \
     rpm -e --nodeps perl-Archive-Tar perl-IO-Compress
+    percona-release enable ppg-${PPG_REPO_VERSION} release; \
+    microdnf install -y --enablerepo="ol8_developer_EPEL"\
+        python3-click \
+        percona-patroni; \
+    microdnf clean all
 
 RUN set -ex; \
     sed -ri "s!^#?(listen_addresses)\s*=\s*\S+.*!\1 = '*'!" /usr/pgsql-${PPG_MAJOR_VERSION}/share/postgresql.conf.sample; \

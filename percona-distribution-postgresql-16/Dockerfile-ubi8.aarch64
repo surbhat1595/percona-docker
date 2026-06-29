@@ -107,7 +107,9 @@ RUN set -ex; \
 
 RUN set -ex; \
     microdnf -y update; \
-    microdnf install -y \
+    percona-release enable ppg-${PPG_REPO_VERSION} release; \
+    microdnf install -y --enablerepo="ol8_developer_EPEL"\
+        python3-click \ 
         percona-patroni; \
     microdnf clean all
 
