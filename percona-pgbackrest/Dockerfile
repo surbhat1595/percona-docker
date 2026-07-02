@@ -50,6 +50,7 @@ RUN set -ex; \
         --enablerepo="ol9_developer_EPEL" \
         percona-pgbackrest \
         procps-ng \
+        tar \
         gettext \
         tar \
         nss_wrapper; \
