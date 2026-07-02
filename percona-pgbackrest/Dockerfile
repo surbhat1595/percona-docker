@@ -46,6 +46,7 @@ RUN set -ex; \
         --enablerepo="ol9_developer_EPEL" \
         percona-pgbackrest \
         procps-ng \
+        tar \
         gettext \
         nss_wrapper; \
     microdnf clean all; \
