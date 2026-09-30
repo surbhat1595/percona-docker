@@ -48,7 +48,7 @@ RUN set -ex; \
     microdnf -y install \
         procps-ng \
         tar \
-        percona-pgbouncer; \
+        percona-pgbouncer-1.25.2-2.el9; \
     microdnf clean all; \
     rm -rf /var/cache/dnf /var/cache/yum
 
